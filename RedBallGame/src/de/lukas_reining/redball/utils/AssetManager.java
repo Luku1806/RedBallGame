@@ -56,6 +56,13 @@ public class AssetManager {
 		loadSprite("LimboMonster_Jump_Fall", "res/LimboMonster/frames/jump/jump_fall.png");
 		loadSprite("LimboMonster_Jump_Up", "res/LimboMonster/frames/jump/jump_up.png");
 
+		// Load Backgrounds
+		loadSprite("Background_Clouds_0", "res/Backgrounds/clouds_1.png");
+		loadSprite("Background_Grassy_Plains", "res/Backgrounds/grassy_plains.jpg");
+
+		// Load Textures
+		loadSprite("Texture_Grass_0", "res/textures/grass_0.png");
+		loadSprite("Texture_Grass_1", "res/textures/grass_1.png");
 	}
 
 	private void loadSprite(String name, String path) {

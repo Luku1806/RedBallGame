@@ -1,6 +1,8 @@
 package de.lukas_reining.redball.worlds.plain;
 
+import java.awt.Color;
 import java.awt.Graphics;
+import java.awt.image.BufferedImage;
 
 import de.lukas_reining.redball.gamelogic.Game;
 import de.lukas_reining.redball.objects.dynamic.creatures.flying.BlueBird;
@@ -11,28 +13,37 @@ import de.lukas_reining.redball.objects.dynamic.creatures.walking.monsters.Yello
 import de.lukas_reining.redball.objects.still.Boundary;
 import de.lukas_reining.redball.objects.still.Box;
 import de.lukas_reining.redball.objects.still.Floor;
+import de.lukas_reining.redball.utils.AssetManager;
 import de.lukas_reining.redball.worlds.World;
 
 public class FirstWorld extends World {
 
+	private Color colorBackground;
+	private BufferedImage imageBackground;
+
 	public FirstWorld() {
 		super(2000);
+		colorBackground = new Color(50, 219, 255);
+		//imageBackground = AssetManager.getInstance().getSprite("Background_Clouds_0");
+		imageBackground = AssetManager.getInstance().getSprite("Background_Grassy_Plains");
 	}
 
 	@Override
 	public void addInitialObjects() {
 		// Floor
-		int floorHeight = 20;
+		int floorHeight = 100;
 		Floor floor = new Floor(0, Game.HEIGHT - floorHeight, levelLenght, floorHeight);
 		objects.add(floor);
 
 		// Boxes
-		Box box1 = new Box(300, Game.HEIGHT - 150 - floorHeight, 200, floorHeight);
+		Box box1 = new Box(300, Game.HEIGHT - 150 - floorHeight, 200, 20);
 		objects.add(box1);
-		Box box2 = new Box(400, Game.HEIGHT - 400 - floorHeight, 200, floorHeight);
+		Box box2 = new Box(400, Game.HEIGHT - 400 - floorHeight, 200, 20);
 		objects.add(box2);
-		Box box3 = new Box(50, Game.HEIGHT - 650 - floorHeight, 200, floorHeight);
+		Box box3 = new Box(800, Game.HEIGHT - 400 - floorHeight, 200, 20);
 		objects.add(box3);
+		Box box4 = new Box(1500, Game.HEIGHT - 300 - floorHeight, 200, 100);
+		objects.add(box4);
 
 		// Bounds
 		Boundary leftBound = new Boundary(0, 0, 1, Game.HEIGHT);
@@ -65,6 +76,12 @@ public class FirstWorld extends World {
 
 	@Override
 	public void render(Graphics g) {
+		// TODO Dynamic/variable background
+//		g.setColor(colorBackground);
+//		g.fillRect(0, 0, Game.WIDTH, Game.HEIGHT);
+		g.drawImage(imageBackground,0,0,Game.WIDTH,Game.HEIGHT,null);
+
+		// render all objects
 		super.render(g);
 	}
 

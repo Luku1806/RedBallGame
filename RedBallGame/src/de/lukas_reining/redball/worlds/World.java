@@ -18,7 +18,6 @@ public abstract class World {
 	// Object stuff
 	protected ArrayList<Object> objects;
 	protected Player player;
-	private Color colorBackground = new Color(50, 219, 255);
 	
 	//Camera stuff
 	protected Camera camera;
@@ -48,10 +47,6 @@ public abstract class World {
 	
 	
 	public void render(Graphics g) {
-		//TODO Dynamic/variable background
-		g.setColor(colorBackground);
-		g.fillRect(0, 0, Game.WIDTH, Game.HEIGHT);
-		
 		camera.refresh(g);
 		for (Object obj : objects) {
 			obj.render(g);
