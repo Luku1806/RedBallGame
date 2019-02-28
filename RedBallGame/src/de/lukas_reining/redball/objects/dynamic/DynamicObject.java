@@ -1,6 +1,5 @@
 package de.lukas_reining.redball.objects.dynamic;
 
-import java.awt.Graphics;
 import java.util.ArrayList;
 
 import de.lukas_reining.redball.objects.Object;

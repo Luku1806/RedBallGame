@@ -17,9 +17,6 @@ public class Camera {
 	}
 
 	public void refresh(Graphics g) {
-		int newX = 0;
-		int newY = 0;
-
 		if (objToFollow == null) {
 			return;
 		}

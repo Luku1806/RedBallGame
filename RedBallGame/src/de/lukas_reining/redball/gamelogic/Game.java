@@ -1,17 +1,7 @@
 package de.lukas_reining.redball.gamelogic;
 
-import java.util.ArrayList;
-
 import de.lukas_reining.redball.Window;
-import de.lukas_reining.redball.objects.Object;
-import de.lukas_reining.redball.objects.dynamic.creatures.Creature;
-import de.lukas_reining.redball.objects.dynamic.creatures.flying.BlueBird;
-import de.lukas_reining.redball.objects.dynamic.creatures.walking.Player;
-import de.lukas_reining.redball.objects.still.Boundary;
-import de.lukas_reining.redball.objects.still.Box;
-import de.lukas_reining.redball.objects.still.Floor;
 import de.lukas_reining.redball.utils.AssetManager;
-import de.lukas_reining.redball.utils.Camera;
 import de.lukas_reining.redball.utils.KeyManager;
 import de.lukas_reining.redball.worlds.World;
 import de.lukas_reining.redball.worlds.plain.FirstWorld;

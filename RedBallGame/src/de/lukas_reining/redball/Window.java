@@ -2,35 +2,30 @@ package de.lukas_reining.redball;
 
 import java.awt.Color;
 import java.awt.Dimension;
-import java.awt.Font;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
-import java.awt.Image;
-import java.awt.RenderingHints;
 import java.awt.event.ComponentAdapter;
 import java.awt.event.ComponentEvent;
-import java.awt.image.BufferStrategy;
 import java.awt.image.BufferedImage;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
 import de.lukas_reining.redball.gamelogic.Game;
-import de.lukas_reining.redball.objects.Object;
 import de.lukas_reining.redball.utils.KeyManager;
 import de.lukas_reining.redball.worlds.World;
 
 public class Window extends JPanel {
 
+	private static final long serialVersionUID = 1L;
+	
 	// Window data
 	private final String title = "RedBall Game";
 	private int renderWidth;
 	private int renderHeight;
-	private float height_width_ratio;
 
 	// Drawing stuff
 	private BufferedImage buffer;
-	private Graphics2D bufferGraphics;
 
 	// Other stuff
 	private JFrame frame;
@@ -43,12 +38,10 @@ public class Window extends JPanel {
 	public Window(int width, int height, World world) {
 		this.renderWidth = width;
 		this.renderHeight = height;
-		this.height_width_ratio = height / width;
 		this.world = world;
 		this.frame = new JFrame();
 
 		this.buffer = new BufferedImage(renderWidth, renderHeight, BufferedImage.TYPE_INT_RGB);
-		this.bufferGraphics = buffer.createGraphics();
 
 		show(width, height);
 	}
@@ -89,6 +82,7 @@ public class Window extends JPanel {
 	}
 
 	class ResizeListener extends ComponentAdapter {
+		@Override
 		public void componentResized(ComponentEvent e) {
 			// Game.WIDTH = e.getComponent().getWidth();
 			// Game.HEIGHT = e.getComponent().getHeight();
