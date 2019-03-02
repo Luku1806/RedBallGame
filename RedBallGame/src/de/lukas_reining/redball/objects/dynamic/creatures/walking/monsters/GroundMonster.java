@@ -43,6 +43,10 @@ public abstract class GroundMonster extends WalkingCreature {
 	@Override
 	public void onCollisionTop(Object object) {
 		super.onCollisionTop(object);
+		// TODO Animate Hurt
+		if(object instanceof Creature) {
+			
+		}
 	}
 
 }
