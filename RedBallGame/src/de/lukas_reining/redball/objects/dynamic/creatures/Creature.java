@@ -2,6 +2,8 @@ package de.lukas_reining.redball.objects.dynamic.creatures;
 
 import java.util.ArrayList;
 
+import org.omg.CosNaming.IstringHelper;
+
 import de.lukas_reining.redball.objects.Object;
 import de.lukas_reining.redball.objects.dynamic.DynamicObject;
 

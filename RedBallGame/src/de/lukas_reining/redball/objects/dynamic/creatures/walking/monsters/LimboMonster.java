@@ -5,7 +5,7 @@ import java.awt.Graphics;
 import de.lukas_reining.redball.objects.Object;
 import de.lukas_reining.redball.objects.dynamic.creatures.walking.WalkingCreature;
 
-public class LimboMonster extends WalkingCreature {
+public class LimboMonster extends GroundMonster {
 
 	public LimboMonster(double x, double y) {
 		this(x, y, 125, 125);
@@ -41,19 +41,16 @@ public class LimboMonster extends WalkingCreature {
 	@Override
 	public void update(double elapsed) {
 		super.update(elapsed);
-		applyImpulse(moveForce);
 	}
 
 	@Override
 	public void onCollisionLeft(Object object) {
 		super.onCollisionLeft(object);
-		moveForce.setX(moveForce.getX() * -1);
 	}
 
 	@Override
 	public void onCollisionRight(Object object) {
 		super.onCollisionRight(object);
-		moveForce.setX(moveForce.getX() * -1);
 	}
 
 	@Override

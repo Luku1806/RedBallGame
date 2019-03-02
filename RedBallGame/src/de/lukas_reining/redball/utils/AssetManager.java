@@ -41,6 +41,16 @@ public class AssetManager {
 		loadSprite("BlueBird_3_rev", "res/BlueBird/frames/frame-4-rev.png");
 		loadSprite("BlueBird_4_rev", "res/BlueBird/frames/frame-5-rev.png");
 		loadSprite("BlueBird_5_rev", "res/BlueBird/frames/frame-6-rev.png");
+		// Load RedBird
+		loadSprite("RedBird_0", "res/Birds/frames/Bird_Red/frame-1.png");
+		loadSprite("RedBird_1", "res/Birds/frames/Bird_Red/frame-2.png");
+		loadSprite("RedBird_2", "res/Birds/frames/Bird_Red/frame-3.png");
+		loadSprite("RedBird_3", "res/Birds/frames/Bird_Red/frame-4.png");
+		// Load RedBird(Reversed)
+		loadSprite("RedBird_0_rev", "res/Birds/frames/Bird_Red/frame-1-rev.png");
+		loadSprite("RedBird_1_rev", "res/Birds/frames/Bird_Red/frame-2-rev.png");
+		loadSprite("RedBird_2_rev", "res/Birds/frames/Bird_Red/frame-3-rev.png");
+		loadSprite("RedBird_3_rev", "res/Birds/frames/Bird_Red/frame-4-rev.png");
 		// Load BlueMonster
 		loadSprite("BlueMonster_Idle_0", "res/LandMonsterBlue/frames/idle/frame-1.png");
 		loadSprite("BlueMonster_Idle_1", "res/LandMonsterBlue/frames/idle/frame-2.png");
@@ -49,6 +59,17 @@ public class AssetManager {
 		loadSprite("YellowMonster_Idle_0", "res/LandMonsterYellow/frames/idle/frame-1.png");
 		loadSprite("YellowMonster_Idle_1", "res/LandMonsterYellow/frames/idle/frame-2.png");
 		loadSprite("YellowMonster_Hit_0", "res/LandMonsterYellow/frames/got_hit/frame.png");
+		// Load YellowBubbleMonster
+		loadSprite("YellowBubbleMonster_Idle_0", "res/BubbleMonsterYellow/frames/idle/frame-1.png");
+		loadSprite("YellowBubbleMonster_Idle_1", "res/BubbleMonsterYellow/frames/idle/frame-2.png");
+		loadSprite("YellowBubbleMonster_Idle_2", "res/BubbleMonsterYellow/frames/idle/frame-3.png");
+		loadSprite("YellowBubbleMonster_Idle_3", "res/BubbleMonsterYellow/frames/idle/frame-4.png");
+		loadSprite("YellowBubbleMonster_Idle_4", "res/BubbleMonsterYellow/frames/idle/frame-5.png");
+		loadSprite("YellowBubbleMonster_Idle_5", "res/BubbleMonsterYellow/frames/idle/frame-6.png");
+		loadSprite("YellowBubbleMonster_Idle_6", "res/BubbleMonsterYellow/frames/idle/frame-7.png");
+		loadSprite("YellowBubbleMonster_Idle_7", "res/BubbleMonsterYellow/frames/idle/frame-8.png");
+		loadSprite("YellowMonster_Hit_0", "res/BubbleMonsterYellow/frames/got_hit/frame-1.png");
+		loadSprite("YellowMonster_Hit_1", "res/BubbleMonsterYellow/frames/got_hit/frame-2.png");
 		// Load LimboMonster
 		loadSprite("LimboMonster_Idle_0", "res/LimboMonster/frames/idle/frame-1.png");
 		loadSprite("LimboMonster_Idle_1", "res/LimboMonster/frames/idle/frame-2.png");
@@ -63,6 +84,8 @@ public class AssetManager {
 		// Load Textures
 		loadSprite("Texture_Grass_0", "res/textures/grass_0.png");
 		loadSprite("Texture_Grass_1", "res/textures/grass_1.png");
+		loadSprite("Texture_Water_0", "res/textures/water_0.png");
+		loadSprite("Texture_Bricks_0", "res/textures/bricks_0.png");
 	}
 
 	private void loadSprite(String name, String path) {
