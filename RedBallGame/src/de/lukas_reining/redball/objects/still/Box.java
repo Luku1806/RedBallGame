@@ -24,8 +24,7 @@ public class Box extends Object {
 
 	@Override
 	public void update(double elapsed) {
-		// TODO Auto-generated method stub
-
+		super.update(elapsed);
 	}
 
 }

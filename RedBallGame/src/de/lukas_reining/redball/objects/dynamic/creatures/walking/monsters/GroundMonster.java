@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import de.lukas_reining.redball.objects.Object;
 import de.lukas_reining.redball.objects.dynamic.creatures.Creature;
 import de.lukas_reining.redball.objects.dynamic.creatures.walking.WalkingCreature;
+import de.lukas_reining.redball.objects.dynamic.creatures.walking.monsters.events.MonsterAttackedEvent;
 import de.lukas_reining.redball.objects.still.tiled.Water;
 
 public abstract class GroundMonster extends WalkingCreature {
@@ -23,6 +24,7 @@ public abstract class GroundMonster extends WalkingCreature {
 	public void checkCollisions(ArrayList<Object> objects) {
 		super.checkCollisions(objects);
 	}
+
 	@Override
 	public void onCollisionLeft(Object object) {
 		super.onCollisionLeft(object);
@@ -44,8 +46,8 @@ public abstract class GroundMonster extends WalkingCreature {
 	public void onCollisionTop(Object object) {
 		super.onCollisionTop(object);
 		// TODO Animate Hurt
-		if(object instanceof Creature) {
-			
+		if (object instanceof Creature) {
+			addEvent(new MonsterAttackedEvent(this));
 		}
 	}
 

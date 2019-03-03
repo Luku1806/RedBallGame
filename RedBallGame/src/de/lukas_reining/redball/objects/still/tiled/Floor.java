@@ -31,8 +31,7 @@ public class Floor extends TiledObject {
 
 	@Override
 	public void update(double elapsed) {
-		// TODO Auto-generated method stub
-
+		super.update(elapsed);
 	}
 
 }

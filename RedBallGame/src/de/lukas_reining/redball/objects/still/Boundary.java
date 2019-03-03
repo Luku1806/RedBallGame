@@ -24,7 +24,7 @@ public class Boundary extends Object {
 
 	@Override
 	public void update(double elapsed) {
-
+		super.update(elapsed);
 	}
 
 }

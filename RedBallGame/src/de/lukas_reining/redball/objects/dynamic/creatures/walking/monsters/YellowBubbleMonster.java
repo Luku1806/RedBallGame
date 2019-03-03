@@ -33,7 +33,7 @@ public class YellowBubbleMonster extends GroundMonster {
 		createAnimation(Object.ANIMATION_IDLE, 0, 8);
 		createAnimation(Object.ANIMATION_HURT, 8, 10);
 
-		setCurrentAnimation(Object.ANIMATION_IDLE);
+		setCurrentAnimation(Object.ANIMATION_HURT);
 	}
 
 	@Override

@@ -68,8 +68,8 @@ public class AssetManager {
 		loadSprite("YellowBubbleMonster_Idle_5", "res/BubbleMonsterYellow/frames/idle/frame-6.png");
 		loadSprite("YellowBubbleMonster_Idle_6", "res/BubbleMonsterYellow/frames/idle/frame-7.png");
 		loadSprite("YellowBubbleMonster_Idle_7", "res/BubbleMonsterYellow/frames/idle/frame-8.png");
-		loadSprite("YellowMonster_Hit_0", "res/BubbleMonsterYellow/frames/got_hit/frame-1.png");
-		loadSprite("YellowMonster_Hit_1", "res/BubbleMonsterYellow/frames/got_hit/frame-2.png");
+		loadSprite("YellowBubbleMonster_Hit_0", "res/BubbleMonsterYellow/frames/got_hit/frame-1.png");
+		loadSprite("YellowBubbleMonster_Hit_1", "res/BubbleMonsterYellow/frames/got_hit/frame-2.png");
 		// Load LimboMonster
 		loadSprite("LimboMonster_Idle_0", "res/LimboMonster/frames/idle/frame-1.png");
 		loadSprite("LimboMonster_Idle_1", "res/LimboMonster/frames/idle/frame-2.png");
@@ -112,7 +112,11 @@ public class AssetManager {
 	}
 
 	public BufferedImage getSprite(String name) {
-		return sprites.get(name);
+		BufferedImage sprite = sprites.get(name);
+		if(sprite == null) {
+			System.err.println("Sprite \"" + name + "\" doesn´t exist\n");
+		}
+		return sprite;
 	}
 
 }

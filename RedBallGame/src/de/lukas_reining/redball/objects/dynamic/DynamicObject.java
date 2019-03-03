@@ -15,7 +15,7 @@ public abstract class DynamicObject extends Object {
 	// Forces
 	protected Vec2D velocity;
 	protected Vec2D acceleration;
-	protected Vec2D impulses;	
+	protected Vec2D impulses;
 	protected Vec2D gravity;
 	protected Vec2D moveForce;
 
@@ -33,6 +33,7 @@ public abstract class DynamicObject extends Object {
 
 	@Override
 	public void update(double elapsed) {
+		super.update(elapsed);
 		applyForces(elapsed);
 	}
 
@@ -57,5 +58,12 @@ public abstract class DynamicObject extends Object {
 	}
 
 	public void checkCollisions(ArrayList<Object> objects) {
+	}
+
+	public Vec2D getVelocity() {
+		return this.velocity;
+	}
+	public void setVelocity(Vec2D vel) {
+		this.velocity = vel;
 	}
 }
