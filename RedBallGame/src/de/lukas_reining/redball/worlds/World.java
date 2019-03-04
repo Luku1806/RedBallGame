@@ -18,8 +18,8 @@ public abstract class World {
 	// Object stuff
 	protected ArrayList<Object> objects;
 	protected Player player;
-	
-	//Camera stuff
+
+	// Camera stuff
 	protected Camera camera;
 
 	public World(int levelLenght) {
@@ -35,17 +35,12 @@ public abstract class World {
 		for (Object obj : objects) {
 			obj.update(elapsed);
 			// If creature check collisions
-			if (obj instanceof Creature && obj != player) {
+			if (obj instanceof Creature) {
 				((Creature) obj).checkCollisions(objects);
 			}
 		}
-		//Check player collisions
-		if (player != null) {
-			player.checkCollisions(objects);
-		}
 	}
-	
-	
+
 	public void render(Graphics g) {
 		camera.refresh(g);
 		for (Object obj : objects) {

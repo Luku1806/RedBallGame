@@ -41,4 +41,12 @@ public abstract class WalkingCreature extends Creature {
 		}
 	}
 
+	public Vec2D getJumpForce() {
+		return jumpForce;
+	}
+
+	public void setJumpForce(Vec2D jumpForce) {
+		this.jumpForce = jumpForce;
+	}
+
 }

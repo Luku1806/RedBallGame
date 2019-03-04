@@ -66,4 +66,10 @@ public abstract class DynamicObject extends Object {
 	public void setVelocity(Vec2D vel) {
 		this.velocity = vel;
 	}
+	public Vec2D getMoveForce() {
+		return this.moveForce;
+	}
+	public void setMoveForce(Vec2D mov) {
+		this.moveForce = mov;
+	}
 }

@@ -8,10 +8,11 @@ import de.lukas_reining.redball.utils.Vec2D;
 public class MonsterAttackedEvent extends Event {
 
 	private GroundMonster monster;
-	private Vec2D prevVelocity;
+	private Vec2D prevMovement;
+	private Vec2D prevJump;
 
 	public MonsterAttackedEvent(GroundMonster monster) {
-		this(1000, monster);
+		this(2000, monster);
 	}
 
 	public MonsterAttackedEvent(long duration, GroundMonster monster) {
@@ -23,8 +24,10 @@ public class MonsterAttackedEvent extends Event {
 	protected void onStart() {
 		System.out.println("Event triggered");
 		monster.setCurrentAnimation(Object.ANIMATION_HURT);
-		prevVelocity = monster.getVelocity();
-		monster.setVelocity(new Vec2D(0, prevVelocity.getY()));
+		prevMovement = monster.getMoveForce();
+		prevJump = monster.getJumpForce();
+		monster.setMoveForce(new Vec2D(0,0));
+		monster.setJumpForce(new Vec2D(0,0));
 	}
 
 	@Override
@@ -36,7 +39,9 @@ public class MonsterAttackedEvent extends Event {
 	protected void onEnd() {
 		System.out.println("Event ended");
 		monster.setCurrentAnimation(Object.ANIMATION_IDLE);
-		monster.setVelocity(prevVelocity);
+		monster.setMoveForce(prevMovement);
+		monster.setJumpForce(prevJump);
+		
 	}
 
 }
