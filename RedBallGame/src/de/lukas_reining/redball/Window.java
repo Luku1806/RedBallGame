@@ -11,6 +11,9 @@ import java.awt.image.BufferedImage;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
+import org.lwjgl.opengl.GL;
+import org.lwjgl.opengl.GL11;
+
 import de.lukas_reining.redball.gamelogic.Game;
 import de.lukas_reining.redball.utils.KeyManager;
 import de.lukas_reining.redball.worlds.World;
