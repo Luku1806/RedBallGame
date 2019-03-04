@@ -55,7 +55,6 @@ public abstract class Creature extends DynamicObject {
 				} else if (b_collision < t_collision && b_collision < l_collision && b_collision < r_collision) {
 					// top collision
 					onCollisionTop(object);
-					//Test
 				}
 
 				if (l_collision < r_collision && l_collision < t_collision && l_collision < b_collision) {
