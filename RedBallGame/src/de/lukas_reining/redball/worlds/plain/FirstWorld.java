@@ -17,23 +17,25 @@ import de.lukas_reining.redball.objects.still.Box;
 import de.lukas_reining.redball.objects.still.tiled.Floor;
 import de.lukas_reining.redball.objects.still.tiled.Water;
 import de.lukas_reining.redball.utils.AssetManager;
-import de.lukas_reining.redball.worlds.World;
+import de.lukas_reining.redball.worlds.GameWorld;
 
-public class FirstWorld extends World {
+public class FirstWorld extends GameWorld {
 
-	private Color colorBackground;
 	private BufferedImage imageBackground;
 
 	public FirstWorld() {
 		super(2000);
-		colorBackground = new Color(50, 219, 255);
-		// imageBackground =
-		// AssetManager.getInstance().getSprite("Background_Clouds_0");
 		imageBackground = AssetManager.getInstance().getSprite("Background_Grassy_Plains");
 	}
 
 	@Override
-	public void addInitialObjects() {
+	public void init() {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	protected void addInitialObjects() {
 		// Floor
 		int floorHeight = 100;
 		Floor floor1 = new Floor(0, Game.HEIGHT - floorHeight, 400, floorHeight);
@@ -42,7 +44,7 @@ public class FirstWorld extends World {
 		objects.add(water1);
 		Floor floor2 = new Floor(700, Game.HEIGHT - floorHeight, levelLenght - 700, floorHeight);
 		objects.add(floor2);
-		
+
 		// Boxes
 		Box box1 = new Box(300, Game.HEIGHT - 200 - floorHeight, 150, 75);
 		objects.add(box1);
@@ -89,10 +91,7 @@ public class FirstWorld extends World {
 	@Override
 	public void render(Graphics g) {
 		// TODO Dynamic/variable background
-//		g.setColor(colorBackground);
-//		g.fillRect(0, 0, Game.WIDTH, Game.HEIGHT);
 		g.drawImage(imageBackground, 0, 0, Game.WIDTH, Game.HEIGHT, null);
-
 		// render all objects
 		super.render(g);
 	}

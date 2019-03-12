@@ -10,24 +10,28 @@ import de.lukas_reining.redball.objects.dynamic.creatures.Creature;
 import de.lukas_reining.redball.objects.dynamic.creatures.walking.Player;
 import de.lukas_reining.redball.utils.Camera;
 
-public abstract class World {
+public abstract class GameWorld {
 
 	// World Data
 	protected int levelLenght;
 
 	// Object stuff
-	protected ArrayList<Object> objects;
-	protected Player player;
 
 	// Camera stuff
 	protected Camera camera;
 
-	public World(int levelLenght) {
+	public GameWorld(int levelLenght) {
 		this.levelLenght = levelLenght;
 		camera = new Camera();
-		objects = new ArrayList<Object>();
 		addInitialObjects();
 	}
+
+	public void initialise() {
+		init();
+		addInitialObjects();
+	}
+
+	protected abstract void init();
 
 	protected abstract void addInitialObjects();
 
