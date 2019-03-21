@@ -52,7 +52,7 @@ public class Player extends WalkingCreature {
 	public void onCollisionLeft(Object object) {
 		super.onCollisionLeft(object);
 		if (object instanceof GroundMonster || object instanceof FlyingCreature) {
-			hurt();
+			hurt(); // Player is hurt
 		}
 	}
 
@@ -60,7 +60,7 @@ public class Player extends WalkingCreature {
 	public void onCollisionRight(Object object) {
 		super.onCollisionRight(object);
 		if (object instanceof GroundMonster || object instanceof FlyingCreature) {
-			hurt();
+			hurt(); // Player is hurt
 		}
 	}
 
@@ -68,7 +68,7 @@ public class Player extends WalkingCreature {
 	public void onCollisionBottom(Object object) {
 		super.onCollisionBottom(object);
 		if (object instanceof GroundMonster || object instanceof FlyingCreature) {
-			heal();
+			heal(); // Player heals
 		}
 	}
 
