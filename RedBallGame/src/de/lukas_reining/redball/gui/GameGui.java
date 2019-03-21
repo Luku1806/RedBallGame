@@ -8,6 +8,7 @@ public class GameGui extends Gui {
 	private Game game;
 	
 	public GameGui(Game game) {
+		super();
 		this.game = game;
 		addInitialObjects();
 	}

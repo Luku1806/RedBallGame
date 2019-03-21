@@ -11,7 +11,6 @@ public abstract class Gui {
 
 	public Gui() {
 		elements = new ArrayList<GuiElement>();
-		//addInitialObjects();
 	}
 
 	public abstract void addInitialObjects();
