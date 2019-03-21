@@ -1,6 +1,8 @@
 package de.lukas_reining.redball.worlds;
 
 import java.awt.Graphics;
+import java.awt.Graphics2D;
+import java.awt.geom.AffineTransform;
 import java.util.ArrayList;
 
 import de.lukas_reining.redball.objects.Object;
@@ -40,10 +42,17 @@ public abstract class World {
 	}
 
 	public void render(Graphics g) {
-		camera.refresh(g);
+		//Save old transformation
+		Graphics2D g2d= ((Graphics2D) g);
+		AffineTransform oldXForm = g2d.getTransform();
+		
+		camera.refresh(g2d);
 		for (Object obj : objects) {
-			obj.render(g);
+			obj.render(g2d);
 		}
+		
+		// Reset transformation
+		g2d.setTransform(oldXForm);
 	}
 
 	public int getLenght() {

@@ -20,14 +20,14 @@ public class Game extends GameLoop {
 	private KeyManager keys;
 
 	// World stuff
-	World currentWorld;
+	private World currentWorld;
 	
 	//Gui stuff
-	Gui currentGui;
+	private Gui currentGui;
 
 	public Game() {
 		currentWorld = new FirstWorld();
-		currentGui = new GameGui();
+		currentGui = new GameGui(this);
 		
 		assets = AssetManager.getInstance();
 		keys = KeyManager.getInstance();
