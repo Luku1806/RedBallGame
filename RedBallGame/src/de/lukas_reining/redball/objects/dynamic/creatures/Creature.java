@@ -51,18 +51,34 @@ public abstract class Creature extends DynamicObject {
 				if (t_collision < b_collision && t_collision < l_collision && t_collision < r_collision) {
 					// bottom collision
 					onCollisionBottom(object);
+					if (object instanceof Creature) {
+						// Notify other object that it has been hit
+						((Creature) object).onCollisionTop(this);
+					}
 					tempOnGround = true;
 				} else if (b_collision < t_collision && b_collision < l_collision && b_collision < r_collision) {
 					// top collision
 					onCollisionTop(object);
+					if (object instanceof Creature) {
+						// Notify other object that it has been hit
+						((Creature) object).onCollisionBottom(this);
+					}
 				}
 
 				if (l_collision < r_collision && l_collision < t_collision && l_collision < b_collision) {
 					// right collision
 					onCollisionRight(object);
+					if (object instanceof Creature) {
+						// Notify other object that it has been hit
+						((Creature) object).onCollisionLeft(this);
+					}
 				} else if (r_collision < l_collision && r_collision < t_collision && r_collision < b_collision) {
 					// left collision
 					onCollisionLeft(object);
+					if (object instanceof Creature) {
+						// Notify other object that it has been hit
+						((Creature) object).onCollisionRight(this);
+					}
 				}
 			}
 			isOnGround = tempOnGround;
