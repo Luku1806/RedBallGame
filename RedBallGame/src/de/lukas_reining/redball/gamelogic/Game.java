@@ -49,7 +49,7 @@ public class Game extends GameLoop {
 		if (keys.right_pressed()) {
 			currentWorld.getPlayer().moveRight();
 		}
-		if (keys.space_typed()) {
+		if (keys.space_pressed()) {
 			currentWorld.getPlayer().jump();
 			System.out.println("Juuump");
 		}
