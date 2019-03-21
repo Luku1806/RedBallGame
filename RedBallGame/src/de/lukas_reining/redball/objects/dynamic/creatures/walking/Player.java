@@ -4,9 +4,15 @@ import java.awt.Graphics;
 import java.util.ArrayList;
 
 import de.lukas_reining.redball.objects.Object;
+import de.lukas_reining.redball.objects.dynamic.creatures.flying.FlyingCreature;
+import de.lukas_reining.redball.objects.dynamic.creatures.walking.monsters.GroundMonster;
+import de.lukas_reining.redball.objects.dynamic.creatures.walking.monsters.events.MonsterAttackedEvent;
 
 public class Player extends WalkingCreature {
 
+	private final int maxHealth = 5;
+	private int health = maxHealth;
+	
 	public Player(double x, double y) {
 		this(x, y, 150, 150);
 	}
@@ -40,6 +46,53 @@ public class Player extends WalkingCreature {
 	@Override
 	public void checkCollisions(ArrayList<Object> objects) {
 		super.checkCollisions(objects);
+	}
+	
+	@Override
+	public void onCollisionLeft(Object object) {
+		super.onCollisionLeft(object);
+		if (object instanceof GroundMonster || object instanceof FlyingCreature) {
+			hurt();
+		}
+	}
+
+	@Override
+	public void onCollisionRight(Object object) {
+		super.onCollisionRight(object);
+		if (object instanceof GroundMonster || object instanceof FlyingCreature) {
+			hurt();
+		}
+	}
+
+	@Override
+	public void onCollisionBottom(Object object) {
+		super.onCollisionBottom(object);
+		if (object instanceof GroundMonster || object instanceof FlyingCreature) {
+			heal();
+		}
+	}
+
+	@Override
+	public void onCollisionTop(Object object) {
+		super.onCollisionTop(object);
+	}
+
+	public void hurt() {
+		health--;
+		if(health < 0) {
+			health = 0;
+		}
+	}
+	
+	public void heal() {
+		health++;
+		if(health > 0) {
+			health = maxHealth;
+		}
+	}
+	
+	public int getHealth() {
+		return this.health;
 	}
 
 }
