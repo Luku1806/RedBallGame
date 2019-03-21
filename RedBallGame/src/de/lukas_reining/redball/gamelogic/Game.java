@@ -1,6 +1,8 @@
 package de.lukas_reining.redball.gamelogic;
 
 import de.lukas_reining.redball.Window;
+import de.lukas_reining.redball.gui.Gui;
+import de.lukas_reining.redball.gui.elements.GameGui;
 import de.lukas_reining.redball.utils.AssetManager;
 import de.lukas_reining.redball.utils.KeyManager;
 import de.lukas_reining.redball.worlds.World;
@@ -19,13 +21,17 @@ public class Game extends GameLoop {
 
 	// World stuff
 	World currentWorld;
+	
+	//Gui stuff
+	Gui currentGui;
 
 	public Game() {
 		currentWorld = new FirstWorld();
+		currentGui = new GameGui();
 		
 		assets = AssetManager.getInstance();
 		keys = KeyManager.getInstance();
-		window = new Window(currentWorld);
+		window = new Window(currentWorld, currentGui);
 		
 		startGameloop();
 	}
@@ -45,12 +51,15 @@ public class Game extends GameLoop {
 		}
 		if (keys.space_pressed()) {
 			currentWorld.getPlayer().jump();
+		}else {
+			currentWorld.getPlayer().setJumping(false);
 		}
 	}
 
 	@Override
 	protected void update(double elapsed) {
 		currentWorld.update(elapsed);
+		currentGui.update(elapsed);
 	}
 
 	public World getCurrentWorld() {
