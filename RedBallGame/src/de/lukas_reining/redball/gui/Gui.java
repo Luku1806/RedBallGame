@@ -7,12 +7,15 @@ import de.lukas_reining.redball.gui.elements.GuiElement;
 
 public abstract class Gui {
 
-	private ArrayList<GuiElement> elements;
+	protected ArrayList<GuiElement> elements;
 
 	public Gui() {
 		elements = new ArrayList<GuiElement>();
+		addInitialObjects();
 	}
 
+	public abstract void addInitialObjects();
+	
 	public void update(double elapsed) {
 		for (GuiElement element : elements) {
 			element.update(elapsed);

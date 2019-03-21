@@ -2,18 +2,19 @@ package de.lukas_reining.redball.gui;
 
 import java.awt.Graphics;
 
+import de.lukas_reining.redball.gui.elements.PlayerHealthElement;
+
 public class GameGui extends Gui {
-
-	@Override
-	public void update(double elapsed) {
-		// TODO Auto-generated method stub
-
+	
+	
+	public GameGui() {
+		super();
 	}
 
 	@Override
-	public void render(Graphics g) {
-		// TODO Auto-generated method stub
-
+	public void addInitialObjects() {
+		PlayerHealthElement phe = new PlayerHealthElement(30, 30, 50, 50);
+		elements.add(phe);
 	}
-
+	
 }

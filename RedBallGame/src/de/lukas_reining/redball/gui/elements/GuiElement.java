@@ -4,8 +4,9 @@ import java.awt.Graphics;
 
 public abstract class GuiElement {
 
-	private int x, y;
-	private int width, height;
+	protected int x, y;
+	protected int width;
+	protected int height;
 
 	public GuiElement(int x, int y, int width, int height) {
 		this.x = x;
