@@ -7,8 +7,6 @@ import de.lukas_reining.redball.objects.Object;
 
 public class Player extends WalkingCreature {
 
-	private boolean jumping;
-
 	public Player(double x, double y) {
 		this(x, y, 150, 150);
 	}
@@ -37,26 +35,11 @@ public class Player extends WalkingCreature {
 	public void update(double elapsed) {
 		super.update(elapsed);
 	}
-	
-	@Override
-	public void jump() {
-		if(!jumping) {
-			super.jump();
-			jumping = true;
-		}
-	}
+
 
 	@Override
 	public void checkCollisions(ArrayList<Object> objects) {
 		super.checkCollisions(objects);
-	}
-
-	public boolean isJumping() {
-		return this.jumping;
-	}
-	
-	public void setJumping(boolean jumps) {
-		this.jumping = jumps;
 	}
 
 }

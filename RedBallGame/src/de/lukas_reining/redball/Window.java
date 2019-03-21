@@ -12,13 +12,14 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 
 import de.lukas_reining.redball.gamelogic.Game;
+import de.lukas_reining.redball.gui.Gui;
 import de.lukas_reining.redball.utils.KeyManager;
 import de.lukas_reining.redball.worlds.World;
 
 public class Window extends JPanel {
 
 	private static final long serialVersionUID = 1L;
-	
+
 	// Window data
 	private final String title = "RedBall Game";
 	private int renderWidth;
@@ -30,16 +31,19 @@ public class Window extends JPanel {
 	// Other stuff
 	private JFrame frame;
 	private World world;
+	private Gui gui;
 
-	public Window(World world) {
-		this(Game.WIDTH, Game.HEIGHT, world);
+	public Window(World world, Gui gui) {
+		this(Game.WIDTH, Game.HEIGHT, world, gui);
 	}
 
-	public Window(int width, int height, World world) {
+	public Window(int width, int height, World world, Gui gui) {
 		this.renderWidth = width;
 		this.renderHeight = height;
-		this.world = world;
 		this.frame = new JFrame();
+
+		this.world = world;
+		this.gui = gui;
 
 		this.buffer = new BufferedImage(renderWidth, renderHeight, BufferedImage.TYPE_INT_RGB);
 
@@ -62,7 +66,7 @@ public class Window extends JPanel {
 	public void paintComponent(Graphics g) {
 		super.paintComponent(g); // paint parent's background
 
-		//Render to buffer
+		// Render to buffer
 		Graphics2D buffGraphics = buffer.createGraphics();
 		render(buffGraphics);
 		buffGraphics.dispose();
@@ -72,13 +76,14 @@ public class Window extends JPanel {
 		int displayWidth = (int) (Game.WIDTH * scale);
 		int displayHeight = (int) (Game.HEIGHT * scale);
 
-		//Render scaled image to screen
+		// Render scaled image to screen
 		g.drawImage(buffer, getWidth() / 2 - displayWidth / 2, getHeight() / 2 - displayHeight / 2, displayWidth,
 				displayHeight, null);
 	}
 
 	public void render(Graphics g) {
 		world.render(g);
+		gui.render(g);
 	}
 
 	class ResizeListener extends ComponentAdapter {

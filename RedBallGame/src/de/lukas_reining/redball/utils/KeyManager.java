@@ -7,10 +7,10 @@ public class KeyManager implements KeyListener {
 
 	private static KeyManager instance;
 
-	//Keys
+	// Keys
 	private boolean left, right, up, down;
 	private boolean space;
-	//End Keys
+	// End Keys
 
 	private KeyManager() {
 	}
@@ -70,6 +70,13 @@ public class KeyManager implements KeyListener {
 
 	@Override
 	public void keyTyped(KeyEvent e) {
+		int key = e.getKeyCode();
+		switch (key) {
+		case KeyEvent.VK_SPACE:
+			System.out.println("JUUUUUM");
+			space_typed = true;
+			break;
+		}
 	}
 
 	public boolean left_pressed() {
@@ -91,5 +98,4 @@ public class KeyManager implements KeyListener {
 	public boolean space_pressed() {
 		return space;
 	}
-
 }

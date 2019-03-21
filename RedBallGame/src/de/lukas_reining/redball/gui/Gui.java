@@ -1,16 +1,28 @@
 package de.lukas_reining.redball.gui;
 
 import java.awt.Graphics;
+import java.util.ArrayList;
+
+import de.lukas_reining.redball.gui.elements.GuiElement;
 
 public abstract class Gui {
-	
+
+	private ArrayList<GuiElement> elements;
+
 	public Gui() {
-		
+		elements = new ArrayList<GuiElement>();
 	}
 
-	public abstract void update(double elapsed);
+	public void update(double elapsed) {
+		for (GuiElement element : elements) {
+			element.update(elapsed);
+		}
+	}
 
-	public abstract void render(Graphics g);
-
+	public void render(Graphics g) {
+		for (GuiElement element : elements) {
+			element.render(g);
+		}
+	}
 
 }
