@@ -86,6 +86,9 @@ public class AssetManager {
 		loadSprite("Texture_Grass_1", "res/textures/grass_1.png");
 		loadSprite("Texture_Water_0", "res/textures/water_0.png");
 		loadSprite("Texture_Bricks_0", "res/textures/bricks_0.png");
+		
+		//Load other assets
+		loadSprite("Asset_Heart_0", "res/assets/heart_0.png");
 	}
 
 	private void loadSprite(String name, String path) {
