@@ -2,9 +2,6 @@ package de.lukas_reining.redball.gui.elements;
 
 import java.awt.Graphics;
 
-import de.lukas_reining.redball.objects.Object;
-import de.lukas_reining.redball.objects.dynamic.creatures.Creature;
-
 public abstract class GuiElement {
 
 	private int x, y;

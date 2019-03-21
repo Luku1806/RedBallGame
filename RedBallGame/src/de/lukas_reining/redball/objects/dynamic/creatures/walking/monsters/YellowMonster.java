@@ -4,7 +4,6 @@ package de.lukas_reining.redball.objects.dynamic.creatures.walking.monsters;
 import java.awt.Graphics;
 
 import de.lukas_reining.redball.objects.Object;
-import de.lukas_reining.redball.objects.dynamic.creatures.walking.WalkingCreature;
 
 public class YellowMonster extends GroundMonster {
 

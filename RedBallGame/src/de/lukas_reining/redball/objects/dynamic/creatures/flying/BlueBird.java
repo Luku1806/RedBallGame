@@ -1,6 +1,7 @@
 package de.lukas_reining.redball.objects.dynamic.creatures.flying;
 
 import java.awt.Graphics;
+
 import de.lukas_reining.redball.objects.Object;
 
 public class BlueBird extends FlyingCreature {

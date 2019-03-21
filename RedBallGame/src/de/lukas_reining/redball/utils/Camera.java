@@ -1,8 +1,9 @@
 package de.lukas_reining.redball.utils;
 
+import java.awt.Graphics;
+
 import de.lukas_reining.redball.gamelogic.Game;
 import de.lukas_reining.redball.objects.Object;
-import java.awt.Graphics;
 
 public class Camera {
 

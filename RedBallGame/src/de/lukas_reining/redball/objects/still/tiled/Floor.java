@@ -1,12 +1,6 @@
 package de.lukas_reining.redball.objects.still.tiled;
 
-import java.awt.Color;
 import java.awt.Graphics;
-import java.awt.Graphics2D;
-import java.awt.Image;
-import java.awt.image.BufferedImage;
-
-import de.lukas_reining.redball.objects.Object;
 
 public class Floor extends TiledObject {
 

@@ -1,10 +1,8 @@
 package de.lukas_reining.redball.worlds;
 
-import java.awt.Color;
 import java.awt.Graphics;
 import java.util.ArrayList;
 
-import de.lukas_reining.redball.gamelogic.Game;
 import de.lukas_reining.redball.objects.Object;
 import de.lukas_reining.redball.objects.dynamic.creatures.Creature;
 import de.lukas_reining.redball.objects.dynamic.creatures.walking.Player;

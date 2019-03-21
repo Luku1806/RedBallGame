@@ -1,8 +1,6 @@
-package de.lukas_reining.redball.gui.elements;
+package de.lukas_reining.redball.gui;
 
 import java.awt.Graphics;
-
-import de.lukas_reining.redball.gui.Gui;
 
 public class GameGui extends Gui {
 

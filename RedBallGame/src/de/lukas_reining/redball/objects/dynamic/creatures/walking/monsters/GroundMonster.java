@@ -3,11 +3,9 @@ package de.lukas_reining.redball.objects.dynamic.creatures.walking.monsters;
 import java.util.ArrayList;
 
 import de.lukas_reining.redball.objects.Object;
-import de.lukas_reining.redball.objects.dynamic.creatures.Creature;
 import de.lukas_reining.redball.objects.dynamic.creatures.walking.Player;
 import de.lukas_reining.redball.objects.dynamic.creatures.walking.WalkingCreature;
 import de.lukas_reining.redball.objects.dynamic.creatures.walking.monsters.events.MonsterAttackedEvent;
-import de.lukas_reining.redball.objects.still.tiled.Water;
 
 public abstract class GroundMonster extends WalkingCreature {
 

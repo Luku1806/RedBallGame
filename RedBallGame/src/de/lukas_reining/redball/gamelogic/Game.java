@@ -1,8 +1,8 @@
 package de.lukas_reining.redball.gamelogic;
 
 import de.lukas_reining.redball.Window;
+import de.lukas_reining.redball.gui.GameGui;
 import de.lukas_reining.redball.gui.Gui;
-import de.lukas_reining.redball.gui.elements.GameGui;
 import de.lukas_reining.redball.utils.AssetManager;
 import de.lukas_reining.redball.utils.KeyManager;
 import de.lukas_reining.redball.worlds.World;
