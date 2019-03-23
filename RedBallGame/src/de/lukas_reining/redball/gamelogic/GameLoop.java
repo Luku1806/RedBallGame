@@ -11,7 +11,6 @@ public abstract class GameLoop {
 	protected abstract void update(double timeSinceLast);
 
 	protected abstract void handleInput();
-	
 
 	public void startGameloop() {
 		double deltaUpdates = 1000000000 / ticks;
@@ -55,6 +54,15 @@ public abstract class GameLoop {
 				frameCount = 0;
 			}
 		}
+	}
+
+	public void startGameloopInThread() {
+		Thread thread = new Thread(new Runnable() {
+			public void run() {
+				startGameloop();
+			}
+		});
+		thread.start();
 	}
 
 }

@@ -33,7 +33,8 @@ public class Game extends GameLoop {
 		keys = KeyManager.getInstance();
 		window = new Window(currentWorld, currentGui);
 		
-		startGameloop();
+		//startGameloop();
+		startGameloopInThread();
 	}
 
 	@Override
