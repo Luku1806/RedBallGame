@@ -3,7 +3,7 @@ package de.lukas_reining.redball.gui.elements;
 import java.awt.Graphics;
 import java.awt.image.BufferedImage;
 
-import de.lukas_reining.redball.objects.dynamic.creatures.walking.Player;
+import de.lukas_reining.redball.objects.dynamic.creatures.walking.player.Player;
 import de.lukas_reining.redball.utils.AssetManager;
 
 public class PlayerHealthElement extends GuiElement{

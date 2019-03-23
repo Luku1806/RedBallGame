@@ -7,7 +7,7 @@ import java.util.ArrayList;
 
 import de.lukas_reining.redball.objects.Object;
 import de.lukas_reining.redball.objects.dynamic.creatures.Creature;
-import de.lukas_reining.redball.objects.dynamic.creatures.walking.Player;
+import de.lukas_reining.redball.objects.dynamic.creatures.walking.player.Player;
 import de.lukas_reining.redball.utils.Camera;
 
 public abstract class World {

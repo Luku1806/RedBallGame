@@ -1,10 +1,11 @@
-package de.lukas_reining.redball.objects.dynamic.creatures.walking;
+package de.lukas_reining.redball.objects.dynamic.creatures.walking.player;
 
 import java.awt.Graphics;
 import java.util.ArrayList;
 
 import de.lukas_reining.redball.objects.Object;
 import de.lukas_reining.redball.objects.dynamic.creatures.flying.FlyingCreature;
+import de.lukas_reining.redball.objects.dynamic.creatures.walking.WalkingCreature;
 import de.lukas_reining.redball.objects.dynamic.creatures.walking.monsters.GroundMonster;
 import de.lukas_reining.redball.objects.dynamic.creatures.walking.monsters.events.MonsterAttackedEvent;
 
