@@ -6,6 +6,7 @@ import java.awt.geom.AffineTransform;
 import java.util.ArrayList;
 
 import de.lukas_reining.redball.objects.Object;
+import de.lukas_reining.redball.objects.dynamic.DynamicObject;
 import de.lukas_reining.redball.objects.dynamic.creatures.Creature;
 import de.lukas_reining.redball.objects.dynamic.creatures.walking.player.Player;
 import de.lukas_reining.redball.utils.Camera;
@@ -38,27 +39,29 @@ public abstract class World {
 			if (obj instanceof Creature) {
 				((Creature) obj).checkCollisions(objects);
 			}
-			//Check if object is alive
-			if(!obj.isAlive() && !(obj instanceof Player)) {
-				killGameObject(obj);
+			// Check if object is alive
+			if (obj instanceof DynamicObject) {
+				if (!((DynamicObject) obj).isAlive() && !(obj instanceof Player)) {
+					killGameObject(obj);
+				}
 			}
 		}
 	}
 
 	public void render(Graphics g) {
-		//Save old transformation
-		Graphics2D g2d= ((Graphics2D) g);
+		// Save old transformation
+		Graphics2D g2d = ((Graphics2D) g);
 		AffineTransform oldXForm = g2d.getTransform();
-		
+
 		camera.refresh(g2d);
 		for (Object obj : objects) {
 			obj.render(g2d);
 		}
-		
+
 		// Reset transformation
 		g2d.setTransform(oldXForm);
 	}
-	
+
 	public void killGameObject(Object object) {
 		objects.remove(object);
 	}
