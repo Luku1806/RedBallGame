@@ -7,6 +7,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 import de.lukas_reining.redball.objects.events.Event;
+import de.lukas_reining.redball.objects.events.EventQueue;
 import de.lukas_reining.redball.utils.AssetManager;
 import de.lukas_reining.redball.utils.Vec2D;
 
@@ -27,8 +28,7 @@ public abstract class Object {
 	protected boolean isAlive;
 
 	// Event stuff
-	protected ArrayList<Event> events;
-	protected Event currentEvent;
+	protected EventQueue events;
 
 	// View
 	protected AssetManager assets;
@@ -54,7 +54,7 @@ public abstract class Object {
 
 		isAlive = true;
 
-		this.events = new ArrayList<Event>();
+		this.events = new EventQueue()
 		this.sprites = new ArrayList<BufferedImage>();
 		this.animations = new HashMap<String, ArrayList<BufferedImage>>();
 
@@ -72,23 +72,7 @@ public abstract class Object {
 	public abstract void render(Graphics g);
 
 	public void update(double elapsed) {
-		// If current event is null and new ones are in the list set it to current
-		if (currentEvent == null) {
-			if (!events.isEmpty()) {
-				currentEvent = events.remove(0);
-			} else {
-				return;
-			}
-		}
-
-		if (currentEvent.hasStarted() && !currentEvent.hasEnded()) {
-			currentEvent.update(); // If event has started -> Update
-		} else if (!currentEvent.hasStarted()) {
-			currentEvent.startEvent(); // If event has not started -> start
-			currentEvent.update();
-		} else if (currentEvent.hasEnded()) {
-			currentEvent = null; // If event has ended -> delete
-		}
+		events.update(elapsed);
 	}
 
 	protected void renderStatic(Graphics g) {
@@ -149,16 +133,10 @@ public abstract class Object {
 		}
 	}
 
-	public void addEvent(Event event) {
-		if (currentEvent == null) {
-			events.add(event);
-		}
-	}
-	
 	public boolean isAlive() {
 		return this.isAlive;
 	}
-	
+
 	public void setIsAlive(boolean alive) {
 		this.isAlive = alive;
 	}

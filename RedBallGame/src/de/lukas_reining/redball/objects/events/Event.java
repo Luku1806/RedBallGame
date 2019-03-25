@@ -9,6 +9,7 @@ public abstract class Event {
 	protected long duration;
 	protected boolean hasStarted;
 	protected boolean hasEnded;
+	protected boolean isExclusive;
 
 	public Event(long duration, Object object) {
 		this.object = object;
@@ -42,6 +43,10 @@ public abstract class Event {
 
 	public boolean hasEnded() {
 		return hasEnded;
+	}
+
+	public boolean isExclusive() {
+		return isExclusive;
 	}
 
 }
