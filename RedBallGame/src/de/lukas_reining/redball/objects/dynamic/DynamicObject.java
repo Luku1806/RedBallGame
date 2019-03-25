@@ -83,13 +83,6 @@ public abstract class DynamicObject extends Object {
 		this.health = health;
 	}
 
-	public boolean isHurt() {
-		return this.isHurt;
-	}
-
-	public void setIsHurt(boolean hurt) {
-		this.isHurt = hurt;
-	}
 
 	public boolean isAlive() {
 		return this.isAlive;

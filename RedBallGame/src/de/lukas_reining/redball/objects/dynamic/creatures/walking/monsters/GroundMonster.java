@@ -29,7 +29,7 @@ public abstract class GroundMonster extends WalkingCreature {
 		super.onCollisionLeft(object);
 		moveForce.setX(moveForce.getX() * -1);
 		if (object instanceof Player) {
-			addEvent(new MonsterAttackedEvent(this));
+			events.addEvent(new MonsterAttackedEvent(this));
 		}
 	}
 
@@ -38,7 +38,7 @@ public abstract class GroundMonster extends WalkingCreature {
 		super.onCollisionRight(object);
 		moveForce.setX(moveForce.getX() * -1);
 		if (object instanceof Player) {
-			addEvent(new MonsterAttackedEvent(this));
+			events.addEvent(new MonsterAttackedEvent(this));
 		}
 	}
 
@@ -52,7 +52,7 @@ public abstract class GroundMonster extends WalkingCreature {
 		super.onCollisionTop(object);
 		// TODO Animate Hurt
 		if (object instanceof Player) {
-			addEvent(new MonsterAttackedEvent(this));
+			events.addEvent(new MonsterAttackedEvent(this));
 		}
 	}
 

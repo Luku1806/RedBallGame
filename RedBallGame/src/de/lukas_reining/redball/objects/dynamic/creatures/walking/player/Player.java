@@ -8,9 +8,10 @@ import de.lukas_reining.redball.objects.dynamic.creatures.flying.FlyingCreature;
 import de.lukas_reining.redball.objects.dynamic.creatures.walking.WalkingCreature;
 import de.lukas_reining.redball.objects.dynamic.creatures.walking.monsters.GroundMonster;
 import de.lukas_reining.redball.objects.dynamic.creatures.walking.monsters.events.MonsterAttackedEvent;
+import de.lukas_reining.redball.objects.dynamic.creatures.walking.player.events.PlayerHurtEvent;
 
 public class Player extends WalkingCreature {
-	
+
 	public Player(double x, double y) {
 		this(x, y, 150, 150);
 	}
@@ -24,7 +25,7 @@ public class Player extends WalkingCreature {
 		moveForce.setX(30);
 		jumpForce.setY(-800);
 	}
-	
+
 	@Override
 	protected void loadResources() {
 		sprites.add(assets.getSprite("Player"));
@@ -32,7 +33,7 @@ public class Player extends WalkingCreature {
 
 	@Override
 	public void render(Graphics g) {
-		renderStatic(g);			
+		renderStatic(g);
 	}
 
 	@Override
@@ -40,12 +41,11 @@ public class Player extends WalkingCreature {
 		super.update(elapsed);
 	}
 
-
 	@Override
 	public void checkCollisions(ArrayList<Object> objects) {
 		super.checkCollisions(objects);
 	}
-	
+
 	@Override
 	public void onCollisionLeft(Object object) {
 		super.onCollisionLeft(object);
@@ -73,6 +73,10 @@ public class Player extends WalkingCreature {
 	@Override
 	public void onCollisionTop(Object object) {
 		super.onCollisionTop(object);
+	}
+
+	public void hurt() {
+		events.addEvent(new PlayerHurtEvent(this));
 	}
 
 }

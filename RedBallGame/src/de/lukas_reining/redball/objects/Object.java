@@ -52,7 +52,7 @@ public abstract class Object {
 		this.width = width;
 		this.height = height;
 
-		this.events = new EventQueue()
+		this.events = new EventQueue();
 		this.sprites = new ArrayList<BufferedImage>();
 		this.animations = new HashMap<String, ArrayList<BufferedImage>>();
 
