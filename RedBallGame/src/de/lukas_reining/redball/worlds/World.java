@@ -38,6 +38,10 @@ public abstract class World {
 			if (obj instanceof Creature) {
 				((Creature) obj).checkCollisions(objects);
 			}
+			//Check if object is alive
+			if(!obj.isAlive() && !(obj instanceof Player)) {
+				killGameObject(obj);
+			}
 		}
 	}
 
@@ -53,6 +57,10 @@ public abstract class World {
 		
 		// Reset transformation
 		g2d.setTransform(oldXForm);
+	}
+	
+	public void killGameObject(Object object) {
+		objects.remove(object);
 	}
 
 	public int getLenght() {

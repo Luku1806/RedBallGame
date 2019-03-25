@@ -18,7 +18,7 @@ public class MonsterAttackedEvent extends Event {
 	public MonsterAttackedEvent(long duration, GroundMonster monster) {
 		super(duration, monster);
 		this.monster = monster;
-	}
+	}                    
 
 	@Override
 	protected void onStart() {

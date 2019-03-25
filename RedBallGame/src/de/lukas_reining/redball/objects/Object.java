@@ -24,6 +24,8 @@ public abstract class Object {
 	protected Vec2D position;
 	protected int width, height;
 
+	protected boolean isAlive;
+
 	// Event stuff
 	protected ArrayList<Event> events;
 	protected Event currentEvent;
@@ -49,6 +51,8 @@ public abstract class Object {
 		this.position.setY(y);
 		this.width = width;
 		this.height = height;
+
+		isAlive = true;
 
 		this.events = new ArrayList<Event>();
 		this.sprites = new ArrayList<BufferedImage>();
@@ -144,11 +148,19 @@ public abstract class Object {
 			System.err.println("Animation \"" + animationName + "\" doesn´t exist!!!\n");
 		}
 	}
-	
+
 	public void addEvent(Event event) {
-		if(currentEvent == null) {
+		if (currentEvent == null) {
 			events.add(event);
 		}
+	}
+	
+	public boolean isAlive() {
+		return this.isAlive;
+	}
+	
+	public void setIsAlive(boolean alive) {
+		this.isAlive = alive;
 	}
 
 	public double getX() {

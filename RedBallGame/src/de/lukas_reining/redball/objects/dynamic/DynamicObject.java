@@ -11,6 +11,11 @@ public abstract class DynamicObject extends Object {
 
 	// State variables
 	protected boolean isOnGround;
+	protected boolean isAlive;
+	protected boolean isHurt;
+
+	private int maxHealth = 5;
+	private int health;
 
 	// Forces
 	protected Vec2D velocity;
@@ -23,6 +28,10 @@ public abstract class DynamicObject extends Object {
 		super(x, y, width, height);
 
 		isOnGround = false;
+		isAlive = true;
+		isHurt = false;
+
+		health = maxHealth;
 
 		velocity = new Vec2D();
 		acceleration = new Vec2D();
@@ -60,15 +69,60 @@ public abstract class DynamicObject extends Object {
 	public void checkCollisions(ArrayList<Object> objects) {
 	}
 
+	public void hurt() {
+		if (isHurt) {
+			return;
+		}
+		health--;
+		if (health < 0) {
+			health = 0;
+			isAlive = false;
+		}
+	}
+
+	public void heal() {
+		health++;
+		if (health > 0) {
+			health = maxHealth;
+		}
+	}
+
+	public int getHealth() {
+		return this.health;
+	}
+
+	public void setHealth(int health) {
+		this.health = health;
+	}
+
+	public boolean isHurt() {
+		return this.isHurt;
+	}
+
+	public void setIsHurt(boolean hurt) {
+		this.isHurt = hurt;
+	}
+
+	public boolean isAlive() {
+		return this.isAlive;
+	}
+
+	public void setIsAlive(boolean alive) {
+		this.isAlive = alive;
+	}
+
 	public Vec2D getVelocity() {
 		return this.velocity;
 	}
+
 	public void setVelocity(Vec2D vel) {
 		this.velocity = vel;
 	}
+
 	public Vec2D getMoveForce() {
 		return this.moveForce;
 	}
+
 	public void setMoveForce(Vec2D mov) {
 		this.moveForce = mov;
 	}

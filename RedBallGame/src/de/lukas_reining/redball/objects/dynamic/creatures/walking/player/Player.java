@@ -10,9 +10,6 @@ import de.lukas_reining.redball.objects.dynamic.creatures.walking.monsters.Groun
 import de.lukas_reining.redball.objects.dynamic.creatures.walking.monsters.events.MonsterAttackedEvent;
 
 public class Player extends WalkingCreature {
-
-	private final int maxHealth = 5;
-	private int health = maxHealth;
 	
 	public Player(double x, double y) {
 		this(x, y, 150, 150);
@@ -76,24 +73,6 @@ public class Player extends WalkingCreature {
 	@Override
 	public void onCollisionTop(Object object) {
 		super.onCollisionTop(object);
-	}
-
-	public void hurt() {
-		health--;
-		if(health < 0) {
-			health = 0;
-		}
-	}
-	
-	public void heal() {
-		health++;
-		if(health > 0) {
-			health = maxHealth;
-		}
-	}
-	
-	public int getHealth() {
-		return this.health;
 	}
 
 }
