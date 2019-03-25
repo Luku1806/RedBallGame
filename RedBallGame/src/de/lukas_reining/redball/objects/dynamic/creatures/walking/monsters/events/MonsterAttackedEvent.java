@@ -13,6 +13,7 @@ public class MonsterAttackedEvent extends Event {
 
 	public MonsterAttackedEvent(GroundMonster monster) {
 		this(2000, monster);
+		this.isExclusive = true;
 	}
 
 	public MonsterAttackedEvent(long duration, GroundMonster monster) {
