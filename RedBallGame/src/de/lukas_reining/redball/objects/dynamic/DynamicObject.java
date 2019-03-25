@@ -3,6 +3,7 @@ package de.lukas_reining.redball.objects.dynamic;
 import java.util.ArrayList;
 
 import de.lukas_reining.redball.objects.Object;
+import de.lukas_reining.redball.objects.dynamic.creatures.walking.player.events.PlayerHurtEvent;
 import de.lukas_reining.redball.utils.Vec2D;
 
 public abstract class DynamicObject extends Object {
@@ -12,7 +13,6 @@ public abstract class DynamicObject extends Object {
 	// State variables
 	protected boolean isOnGround;
 	protected boolean isAlive;
-	protected boolean isHurt;
 
 	private int maxHealth = 5;
 	private int health;
@@ -66,17 +66,6 @@ public abstract class DynamicObject extends Object {
 	}
 
 	public void checkCollisions(ArrayList<Object> objects) {
-	}
-
-	public void hurt() {
-		if (isHurt) {
-			return;
-		}
-		health--;
-		if (health < 0) {
-			health = 0;
-			isAlive = false;
-		}
 	}
 
 	public void heal() {
