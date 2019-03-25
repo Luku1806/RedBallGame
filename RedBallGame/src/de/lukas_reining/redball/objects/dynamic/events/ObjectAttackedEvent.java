@@ -15,8 +15,6 @@ public class ObjectAttackedEvent extends Event {
 
 	@Override
 	protected void onStart() {
-		dynObject.hurt();
-		dynObject.setIsHurt(true);
 	}
 
 	@Override
@@ -28,7 +26,6 @@ public class ObjectAttackedEvent extends Event {
 	@Override
 	protected void onEnd() {
 		// TODO Auto-generated method stub
-		dynObject.setIsHurt(false);
 	}
 
 }
