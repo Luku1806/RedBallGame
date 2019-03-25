@@ -29,7 +29,6 @@ public abstract class DynamicObject extends Object {
 
 		isOnGround = false;
 		isAlive = true;
-		isHurt = false;
 
 		health = maxHealth;
 

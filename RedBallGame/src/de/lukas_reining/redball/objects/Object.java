@@ -52,8 +52,6 @@ public abstract class Object {
 		this.width = width;
 		this.height = height;
 
-		isAlive = true;
-
 		this.events = new EventQueue()
 		this.sprites = new ArrayList<BufferedImage>();
 		this.animations = new HashMap<String, ArrayList<BufferedImage>>();
@@ -133,13 +131,6 @@ public abstract class Object {
 		}
 	}
 
-	public boolean isAlive() {
-		return this.isAlive;
-	}
-
-	public void setIsAlive(boolean alive) {
-		this.isAlive = alive;
-	}
 
 	public double getX() {
 		return position.getX();
